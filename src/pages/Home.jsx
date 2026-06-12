@@ -193,28 +193,30 @@ function Home() {
       `}</style>
 
       {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center min-h-screen">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-8 md:gap-12 items-center min-h-[60vh] md:min-h-screen">
         <div>
-          <h1 className="text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-300 mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-300 mb-6 sm:mb-8 leading-tight">
             {t("home_title")}
           </h1>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
+          <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-xl">
             {t("home_sub")}
           </p>
-          <div className="flex gap-4">
-            <button className="px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition cursor-pointer">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <button className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition">
               {t("learn_more") || "Learn More"}
             </button>
-            <button className="px-8 py-3 border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-gray-950 rounded-lg font-semibold transition cursor-pointer">
+            <button className="w-full sm:w-auto px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-gray-950 rounded-lg font-semibold transition">
               {t("explore") || "Explore"}
             </button>
           </div>
         </div>
 
-        {/* Sound Waves Visual Element */}
-        <div className="relative h-96 md:h-full hidden md:flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl blur-3xl"></div>
-          <SoundWaves />
+        {/* Sound Waves Visual Element: show smaller on mobile */}
+        <div className="relative h-56 sm:h-72 md:h-full flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-3xl blur-3xl z-0"></div>
+          <div className="relative z-10 w-40 h-40 md:w-80 md:h-80 flex items-center justify-center">
+            <SoundWaves />
+          </div>
         </div>
       </div>
 
