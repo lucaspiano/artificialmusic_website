@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body, #root {
+	height: 100%;
+}
+
+/* Ensure the page background is the dark theme and avoid horizontal white gutters */
+body {
+	@apply bg-gray-950 text-gray-200;
+	overflow-x: hidden;
+}
