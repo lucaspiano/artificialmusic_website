@@ -5,7 +5,7 @@ const path = require('path');
 const out = path.join(__dirname, '..', 'public', 'assets', 'whatsapp-preview.png');
 const og = {
   title: 'Artificial Music',
-  description: 'Engenharia de Inteligência para Sistemas Sonoros.',
+  description: 'Engineering Intelligence for Sound Systems.',
   image: 'https://www.artificialmusic.ai/assets/preview.png',
   url: 'https://www.artificialmusic.ai/'
 };
