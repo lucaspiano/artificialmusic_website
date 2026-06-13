@@ -36,4 +36,17 @@ img, picture, video, canvas {
 		max-width: 100%;
 		overflow-x: hidden;
 	}
+
+	/* Newsletter/form safe layout: prevent input+button from overflowing */
+	.rounded-3xl form .flex {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.rounded-3xl form .flex .flex-1 {
+		min-width: 0; /* allow flex child to shrink below content size */
+	}
+	.rounded-3xl form .flex button {
+		flex: 0 0 auto;
+		align-self: center;
+	}
 }
