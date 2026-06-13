@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" aria-hidden="true">
+  <rect width="100%" height="100%" fill="#0f172a" />
+  <g transform="translate(100,100)">
+    <rect x="0" y="0" width="160" height="160" rx="16" ry="16" fill="#ffffff" />
+    <g transform="translate(16,16)">
+      <path d="M10 80 C30 20, 70 20, 90 80 C110 140, 150 140, 170 80" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+  </g>
+  <text x="320" y="220" font-family="Inter, system-ui, Arial, sans-serif" font-size="72" fill="#ffffff" font-weight="700">Artificial Music</text>
+  <text x="320" y="300" font-family="Inter, system-ui, Arial, sans-serif" font-size="36" fill="#9ca3af">Crie/experimente música com IA</text>
+</svg>
