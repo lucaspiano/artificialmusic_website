@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "artificialmusic.ai"
+        }
+      ],
+      "destination": "https://www.artificialmusic.ai/:path*",
+      "permanent": true
+    }
+  ]
+}
