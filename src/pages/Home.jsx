@@ -248,7 +248,7 @@ function Home() {
           <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
             {t("newsletter_desc")}
           </p>
-          <form className="max-w-md mx-auto" onSubmit={(e) => { e.preventDefault(); alert(t("newsletter_success")); }}>
+          <form className="w-full max-w-full sm:max-w-md mx-auto" onSubmit={(e) => { e.preventDefault(); alert(t("newsletter_success")); }}>
             <div className="flex gap-4">
               <input
                 type="email"
