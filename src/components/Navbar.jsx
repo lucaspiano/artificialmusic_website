@@ -80,7 +80,7 @@ function Navbar() {
                 className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}
                 aria-label={`Set language ${l.code}`}
               >
-                <img src={l.flag} alt={l.label} className="w-6 h-4 object-cover" />
+                <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
               </button>
             ))}
           </div>
@@ -115,7 +115,7 @@ function Navbar() {
               <div className="flex gap-3 mt-2">
                 {langs.map((l) => (
                   <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}>
-                    <img src={l.flag} alt={l.label} className="w-6 h-4 object-cover" />
+                    <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
                   </button>
                 ))}
               </div>
