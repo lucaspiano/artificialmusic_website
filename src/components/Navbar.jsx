@@ -6,9 +6,9 @@ function Navbar() {
   const { t, lang, setLang } = useI18n();
 
   const langs = [
-    { code: "pt", label: "PT", flag: "/assets/flags/br.svg" },
-    { code: "es", label: "ES", flag: "/assets/flags/es.svg" },
-    { code: "en", label: "EN", flag: "/assets/flags/us.svg" },
+    { code: "pt", label: "PT-BR", flag: "/assets/flags/br.svg" },
+    { code: "es", label: "ES-ES", flag: "/assets/flags/es.svg" },
+    { code: "en", label: "EN-US", flag: "/assets/flags/us.svg" },
   ];
 
   const [open, setOpen] = useState(false);
