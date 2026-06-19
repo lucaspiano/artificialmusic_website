@@ -80,7 +80,19 @@ function Navbar() {
                 className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}
                 aria-label={`Set language ${l.code}`}
               >
-                <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
+                <img
+                  src={l.flag}
+                  alt={l.label}
+                  width="24"
+                  height="16"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700"
+                  onError={(e) => {
+                    const svg = `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 16\"><rect width=\"24\" height=\"16\" fill=\"#374151\"/><text x=\"12\" y=\"12\" font-size=\"10\" font-family=\"Arial, Helvetica, sans-serif\" fill=\"#fff\" text-anchor=\"middle\">${l.label}</text></svg>`;
+                    e.currentTarget.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+                  }}
+                />
               </button>
             ))}
           </div>
@@ -115,7 +127,19 @@ function Navbar() {
               <div className="flex gap-3 mt-2">
                 {langs.map((l) => (
                   <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}>
-                    <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
+                    <img
+                      src={l.flag}
+                      alt={l.label}
+                      width="24"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700"
+                      onError={(e) => {
+                        const svg = `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 16\"><rect width=\"24\" height=\"16\" fill=\"#374151\"/><text x=\"12\" y=\"12\" font-size=\"10\" font-family=\"Arial, Helvetica, sans-serif\" fill=\"#fff\" text-anchor=\"middle\">${l.label}</text></svg>`;
+                        e.currentTarget.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+                      }}
+                    />
                   </button>
                 ))}
               </div>
