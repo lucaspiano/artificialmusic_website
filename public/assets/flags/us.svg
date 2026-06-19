@@ -1,8 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
   <rect width="640" height="480" fill="#b22234"/>
-  <rect x="0" y="0" width="640" height="480" fill="none"/>
-  <g transform="scale(1)">
-    <rect x="0" y="0" width="320" height="210" fill="#3c3b6e"/>
-    <text x="480" y="260" font-family="Arial" font-size="60" fill="#fff" text-anchor="middle">US</text>
+  <g>
+    <!-- stripes -->
+    <g fill="#fff">
+      <rect y="40" width="640" height="40"/>
+      <rect y="120" width="640" height="40"/>
+      <rect y="200" width="640" height="40"/>
+      <rect y="280" width="640" height="40"/>
+      <rect y="360" width="640" height="40"/>
+    </g>
+    <!-- canton -->
+    <rect width="280" height="200" fill="#3c3b6e"/>
+    <!-- simple star grid (represented as small circles for simplicity) -->
+    <g fill="#fff" transform="translate(24,20)">
+      <g transform="translate(0,0)">
+        <circle cx="10" cy="10" r="4"/>
+        <circle cx="34" cy="10" r="4"/>
+        <circle cx="58" cy="10" r="4"/>
+        <circle cx="10" cy="34" r="4"/>
+        <circle cx="34" cy="34" r="4"/>
+        <circle cx="58" cy="34" r="4"/>
+        <circle cx="10" cy="58" r="4"/>
+        <circle cx="34" cy="58" r="4"/>
+        <circle cx="58" cy="58" r="4"/>
+      </g>
+    </g>
+    <text x="480" y="260" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#fff" text-anchor="middle">US</text>
   </g>
 </svg>
