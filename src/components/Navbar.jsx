@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
 
@@ -12,6 +12,18 @@ function Navbar() {
   ];
 
   const [open, setOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
+
+  useEffect(() => {
+    function onDocClick(e) {
+      if (langRef.current && !langRef.current.contains(e.target)) {
+        setLangOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, []);
 
   return (
     <nav className="bg-gray-900 p-4 border-b border-gray-800">
@@ -71,30 +83,44 @@ function Navbar() {
             lucaspiano.com
           </a>
 
-          <div className="ml-4 flex items-center space-x-2">
-            {langs.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => setLang(l.code)}
-                title={l.label}
-                className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}
-                aria-label={`Set language ${l.code}`}
-              >
-                <img
-                  src={l.flag}
-                  alt={l.label}
-                  width="24"
-                  height="16"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700"
-                  onError={(e) => {
-                    const svg = `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 16\"><rect width=\"24\" height=\"16\" fill=\"#374151\"/><text x=\"12\" y=\"12\" font-size=\"10\" font-family=\"Arial, Helvetica, sans-serif\" fill=\"#fff\" text-anchor=\"middle\">${l.label}</text></svg>`;
-                    e.currentTarget.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
-                  }}
-                />
-              </button>
-            ))}
+          <div className="ml-4 relative" ref={langRef}>
+            {(() => {
+              const current = langs.find((x) => x.code === lang) || langs[0];
+              return (
+                <>
+                  <button
+                    onClick={() => setLangOpen((s) => !s)}
+                    aria-haspopup="true"
+                    aria-expanded={langOpen}
+                    className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-800 focus:outline-none"
+                  >
+                    <img src={current.flag} alt={current.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
+                    <span className="text-sm text-gray-300 hidden md:inline">{current.label}</span>
+                    <svg className="w-3 h-3 text-gray-400 ml-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+
+                  {langOpen && (
+                    <div className="absolute right-0 mt-2 w-40 bg-gray-900 border border-gray-800 rounded-md shadow-lg z-50 py-1">
+                      {langs.map((l) => (
+                        <button
+                          key={l.code}
+                          onClick={() => {
+                            setLang(l.code);
+                            setLangOpen(false);
+                          }}
+                          className={`w-full text-left flex items-center px-3 py-2 hover:bg-gray-800 ${lang === l.code ? "opacity-100" : "opacity-90"}`}
+                        >
+                          <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
+                          <span className="ml-3 text-sm">{l.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </div>
         </div>
 
@@ -124,22 +150,11 @@ function Navbar() {
             <Link to="/contact" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("contact")}</Link>
             <div className="pt-2 border-t border-gray-800">
               <a href="https://www.lucaspiano.com" className="block text-gray-400 hover:text-purple-400">lucaspiano.com</a>
-              <div className="flex gap-3 mt-2">
+              <div className="flex flex-col gap-2 mt-2">
                 {langs.map((l) => (
-                  <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}>
-                    <img
-                      src={l.flag}
-                      alt={l.label}
-                      width="24"
-                      height="16"
-                      loading="lazy"
-                      decoding="async"
-                      className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700"
-                      onError={(e) => {
-                        const svg = `<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 16\"><rect width=\"24\" height=\"16\" fill=\"#374151\"/><text x=\"12\" y=\"12\" font-size=\"10\" font-family=\"Arial, Helvetica, sans-serif\" fill=\"#fff\" text-anchor=\"middle\">${l.label}</text></svg>`;
-                        e.currentTarget.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
-                      }}
-                    />
+                  <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`flex items-center gap-3 px-3 py-2 hover:bg-gray-800 rounded ${lang === l.code ? "opacity-100" : "opacity-90"}`}>
+                    <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
+                    <span className="text-sm">{l.label}</span>
                   </button>
                 ))}
               </div>
