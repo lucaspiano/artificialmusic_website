@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <rect width="640" height="480" fill="#006600"/>
+  <rect x="0" y="0" width="640" height="480" fill="none"/>
+  <g transform="translate(320,240) scale(1)">
+    <circle r="140" fill="#ffdf00"/>
+    <path d="M-120,0 A120,60 0 1,0 120,0 A120,60 0 1,0 -120,0" fill="#002776" transform="rotate(-15)"/>
+    <text x="0" y="10" font-family="Arial" font-size="60" fill="#fff" text-anchor="middle">BR</text>
+  </g>
+</svg>

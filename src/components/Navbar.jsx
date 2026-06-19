@@ -6,9 +6,9 @@ function Navbar() {
   const { t, lang, setLang } = useI18n();
 
   const langs = [
-    { code: "pt", label: "PT", flag: "🇧🇷" },
-    { code: "es", label: "ES", flag: "🇪🇸" },
-    { code: "en", label: "EN", flag: "🇺🇸" },
+    { code: "pt", label: "PT", flag: "/assets/flags/br.svg" },
+    { code: "es", label: "ES", flag: "/assets/flags/es.svg" },
+    { code: "en", label: "EN", flag: "/assets/flags/us.svg" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -77,10 +77,10 @@ function Navbar() {
                 key={l.code}
                 onClick={() => setLang(l.code)}
                 title={l.label}
-                className={`text-xl focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}
+                className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}
                 aria-label={`Set language ${l.code}`}
               >
-                <span>{l.flag}</span>
+                <img src={l.flag} alt={l.label} className="w-6 h-4 object-cover" />
               </button>
             ))}
           </div>
@@ -114,7 +114,9 @@ function Navbar() {
               <a href="https://www.lucaspiano.com" className="block text-gray-400 hover:text-purple-400">lucaspiano.com</a>
               <div className="flex gap-3 mt-2">
                 {langs.map((l) => (
-                  <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`text-xl focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}>{l.flag}</button>
+                  <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`focus:outline-none ${lang === l.code ? "opacity-100" : "opacity-60"}`}>
+                    <img src={l.flag} alt={l.label} className="w-6 h-4 object-cover" />
+                  </button>
                 ))}
               </div>
             </div>
