@@ -1,5 +1,6 @@
 import React from "react";
 import { useI18n } from "../i18n";
+import dissertationPdf from "../assets/documents/Dissertation - Final - Lucas - English - Translated.pdf";
 
 // Componente de ondas sonoras animadas (grande)
 function SoundWaves() {
@@ -206,7 +207,7 @@ function Home() {
               {t("learn_more") || "Saiba mais"}
             </a>
             <a
-              href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+              href={dissertationPdf}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition inline-flex items-center justify-center border border-emerald-400/80 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-400 hover:text-gray-950 shadow-lg shadow-emerald-500/10"
@@ -257,7 +258,7 @@ function Home() {
               <p className="text-gray-300 leading-relaxed">{t("dissertation_summary_text")}</p>
             </div>
             <a
-              href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+              href={dissertationPdf}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-3 font-semibold text-gray-950 transition hover:bg-emerald-400"

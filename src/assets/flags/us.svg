@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="United States flag">
+  <rect width="640" height="480" fill="#b22234" />
+  <g>
+    <!-- 13 stripes -->
+    <g>
+      <rect width="640" height="36.923" y="0" fill="#b22234" />
+      <rect width="640" height="36.923" y="36.923" fill="#ffffff" />
+      <rect width="640" height="36.923" y="73.846" fill="#b22234" />
+      <rect width="640" height="36.923" y="110.769" fill="#ffffff" />
+      <rect width="640" height="36.923" y="147.692" fill="#b22234" />
+      <rect width="640" height="36.923" y="184.615" fill="#ffffff" />
+      <rect width="640" height="36.923" y="221.538" fill="#b22234" />
+      <rect width="640" height="36.923" y="258.461" fill="#ffffff" />
+      <rect width="640" height="36.923" y="295.384" fill="#b22234" />
+      <rect width="640" height="36.923" y="332.307" fill="#ffffff" />
+      <rect width="640" height="36.923" y="369.23" fill="#b22234" />
+      <rect width="640" height="36.923" y="406.153" fill="#ffffff" />
+      <rect width="640" height="36.923" y="443.076" fill="#b22234" />
+    </g>
+    <!-- canton -->
+    <rect width="280" height="200" fill="#3c3b6e" />
+    <!-- simplified star field: 5 rows x 6 cols (stylized) -->
+    <g fill="#fff" transform="translate(16,12) scale(0.9)">
+      <!-- rows -->
+      <g>
+        <!-- row 1 -->
+        <polygon points="6,6 7.8,10.2 12.4,10.2 8.6,13 10.4,17.2 6,14 1.6,17.2 3.4,13 -0.4,10.2 4.2,10.2" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,10 +1,11 @@
 import React from "react";
 import { useI18n } from "../i18n";
+import dissertationPdf from "../assets/documents/Dissertation - Final - Lucas - English - Translated.pdf";
 
 function Research() {
   const { t } = useI18n();
   const stack = t("tech_stack") || [];
-  const pdfUrl = "/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf";
+  const pdfUrl = dissertationPdf;
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-20">

@@ -1,14 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
+import brFlag from "../assets/flags/br.svg";
+import esFlag from "../assets/flags/es.svg";
+import usFlag from "../assets/flags/us.svg";
+import dissertationPdf from "../assets/documents/Dissertation - Final - Lucas - English - Translated.pdf";
 
 function Navbar() {
   const { t, lang, setLang } = useI18n();
+  const pdfUrl = dissertationPdf;
 
   const langs = [
-    { code: "pt", label: "PT-BR", flag: "/assets/flags/br.svg" },
-    { code: "es", label: "ES-ES", flag: "/assets/flags/es.svg" },
-    { code: "en", label: "EN-US", flag: "/assets/flags/us.svg" },
+    { code: "pt", label: "PT-BR", flag: brFlag, emoji: "🇧🇷" },
+    { code: "es", label: "ES-ES", flag: esFlag, emoji: "🇪🇸" },
+    { code: "en", label: "EN-US", flag: usFlag, emoji: "🇺🇸" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -61,12 +66,13 @@ function Navbar() {
           <Link to="/research" className="hover:text-purple-400 transition">{t("research")}</Link>
           <Link to="/future" className="hover:text-purple-400 transition">{t("future")}</Link>
           <a
-            href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+            href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-emerald-400/70 px-3 py-1 text-sm font-medium text-emerald-300 transition hover:bg-emerald-400/10"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-400/70 px-3 py-1 text-sm font-medium text-emerald-300 transition hover:bg-emerald-400/10"
           >
-            {t("dissertation_title")}
+            <span className="rounded-full bg-emerald-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em]">PDF</span>
+            <span>{t("dissertation_title")}</span>
           </a>
           <Link to="/contact" className="hover:text-purple-400 transition">{t("contact")}</Link>
 
@@ -102,6 +108,7 @@ function Navbar() {
                     aria-expanded={langOpen}
                     className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-800 focus:outline-none"
                   >
+                    <span className="text-lg leading-none" aria-hidden="true">{current.emoji}</span>
                     <img src={current.flag} alt={current.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
                     <span className="text-sm text-gray-300 hidden md:inline">{current.label}</span>
                     <svg className="w-3 h-3 text-gray-400 ml-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -120,7 +127,8 @@ function Navbar() {
                           }}
                           className={`w-full text-left flex items-center px-3 py-2 hover:bg-gray-800 ${lang === l.code ? "opacity-100" : "opacity-90"}`}
                         >
-                          <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
+                          <span className="text-lg leading-none" aria-hidden="true">{l.emoji}</span>
+                          <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700 ml-2" />
                           <span className="ml-3 text-sm">{l.label}</span>
                         </button>
                       ))}
@@ -156,13 +164,14 @@ function Navbar() {
             <Link to="/research" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("research")}</Link>
             <Link to="/future" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("future")}</Link>
             <a
-              href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+              href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="block rounded-full border border-emerald-400/70 px-3 py-2 text-sm font-medium text-emerald-300 hover:bg-emerald-400/10"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/70 px-3 py-2 text-sm font-medium text-emerald-300 hover:bg-emerald-400/10"
             >
-              {t("dissertation_title")}
+              <span className="rounded-full bg-emerald-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em]">PDF</span>
+              <span>{t("dissertation_title")}</span>
             </a>
             <Link to="/contact" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("contact")}</Link>
             <div className="pt-2 border-t border-gray-800">
@@ -170,6 +179,7 @@ function Navbar() {
               <div className="flex flex-col gap-2 mt-2">
                 {langs.map((l) => (
                   <button key={l.code} onClick={() => { setLang(l.code); setOpen(false); }} className={`flex items-center gap-3 px-3 py-2 hover:bg-gray-800 rounded ${lang === l.code ? "opacity-100" : "opacity-90"}`}>
+                    <span className="text-lg leading-none" aria-hidden="true">{l.emoji}</span>
                     <img src={l.flag} alt={l.label} width="24" height="16" loading="lazy" decoding="async" className="w-6 h-4 object-cover rounded-sm shadow-sm border border-gray-700" />
                     <span className="text-sm">{l.label}</span>
                   </button>
