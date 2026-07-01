@@ -202,12 +202,17 @@ function Home() {
             {t("home_sub")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition">
-              {t("learn_more") || "Learn More"}
-            </button>
-            <button className="w-full sm:w-auto px-6 py-3 border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-gray-950 rounded-lg font-semibold transition">
-              {t("explore") || "Explore"}
-            </button>
+            <a href="/about" className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition inline-flex items-center justify-center">
+              {t("learn_more") || "Saiba mais"}
+            </a>
+            <a
+              href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-gray-950 rounded-lg font-semibold transition inline-flex items-center justify-center"
+            >
+              {t("dissertation_cta") || "Read dissertation"}
+            </a>
           </div>
         </div>
 
