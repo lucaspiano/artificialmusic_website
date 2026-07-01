@@ -60,6 +60,14 @@ function Navbar() {
           <Link to="/products" className="hover:text-purple-400 transition">{t("products")}</Link>
           <Link to="/research" className="hover:text-purple-400 transition">{t("research")}</Link>
           <Link to="/future" className="hover:text-purple-400 transition">{t("future")}</Link>
+          <a
+            href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-emerald-400/70 px-3 py-1 text-sm font-medium text-emerald-300 transition hover:bg-emerald-400/10"
+          >
+            {t("dissertation_title")}
+          </a>
           <Link to="/contact" className="hover:text-purple-400 transition">{t("contact")}</Link>
 
           <a
@@ -147,6 +155,15 @@ function Navbar() {
             <Link to="/products" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("products")}</Link>
             <Link to="/research" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("research")}</Link>
             <Link to="/future" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("future")}</Link>
+            <a
+              href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="block rounded-full border border-emerald-400/70 px-3 py-2 text-sm font-medium text-emerald-300 hover:bg-emerald-400/10"
+            >
+              {t("dissertation_title")}
+            </a>
             <Link to="/contact" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("contact")}</Link>
             <div className="pt-2 border-t border-gray-800">
               <a href="https://www.lucaspiano.com" className="block text-gray-400 hover:text-purple-400">lucaspiano.com</a>
