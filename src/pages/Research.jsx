@@ -12,11 +12,21 @@ function Research() {
 
       <p className="text-gray-400 mb-6">{t("research_intro")}</p>
 
-      <div className="mb-10 rounded-2xl border border-purple-500/20 bg-gray-900/70 p-6 shadow-lg">
-        <h2 className="text-2xl font-semibold mb-3 text-purple-300">{t("dissertation_title")}</h2>
-        <p className="text-gray-400 mb-5">{t("dissertation_desc")}</p>
+      <div className="mb-10 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-900 p-6 shadow-lg shadow-purple-950/20">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-purple-400">{t("dissertation_label")}</p>
+            <h2 className="text-2xl font-semibold text-purple-300">{t("dissertation_title")}</h2>
+            <p className="mt-2 text-sm text-gray-400">{t("dissertation_meta")}</p>
+          </div>
+          <div className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-300">
+            PDF
+          </div>
+        </div>
 
-        <div className="flex flex-wrap gap-3 mb-6">
+        <p className="mt-5 text-gray-400">{t("dissertation_desc")}</p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
           <a
             href={pdfUrl}
             target="_blank"
