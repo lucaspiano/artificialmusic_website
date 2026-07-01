@@ -202,15 +202,16 @@ function Home() {
             {t("home_sub")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="/about" className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition inline-flex items-center justify-center">
+            <a href="/about" className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition inline-flex items-center justify-center shadow-lg shadow-purple-500/20">
               {t("learn_more") || "Saiba mais"}
             </a>
             <a
               href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-gray-950 rounded-lg font-semibold transition inline-flex items-center justify-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition inline-flex items-center justify-center border border-emerald-400/80 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-400 hover:text-gray-950 shadow-lg shadow-emerald-500/10"
             >
+              <span className="mr-2 rounded-full bg-emerald-400/20 px-2 py-0.5 text-xs uppercase tracking-[0.2em]">PDF</span>
               {t("dissertation_cta") || "Read dissertation"}
             </a>
           </div>
