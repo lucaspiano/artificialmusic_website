@@ -24,6 +24,10 @@ const translations = {
     product_pulsegarden_desc: "A bio-inspired generative sound ecosystem evolving in real time for emotional regulation and stress modulation.",
     research: "Research",
     research_intro: "Focused on neural networks for music generation, self-supervised learning, computational creativity, and AI-driven sound systems.",
+    dissertation_title: "Dissertation",
+    dissertation_desc: "Read the dissertation directly in the browser or download the PDF to read it at your convenience.",
+    dissertation_open: "Open PDF",
+    dissertation_download: "Download PDF",
     tech_stack_title: "Technology Stack",
     tech_stack: [
       "Python — Machine Learning",
@@ -77,6 +81,10 @@ const translations = {
     product_pulsegarden_desc: "Ecossistema sonoro generativo bio-inspirado que evolui em tempo real para regulação emocional e modulação de estresse.",
     research: "Pesquisa",
     research_intro: "Focado em redes neurais para geração musical, aprendizado auto-supervisionado, criatividade computacional e sistemas sonoros dirigidos por IA.",
+    dissertation_title: "Dissertação",
+    dissertation_desc: "Leia a dissertação diretamente no navegador ou baixe o PDF para ler quando quiser.",
+    dissertation_open: "Abrir PDF",
+    dissertation_download: "Baixar PDF",
     tech_stack_title: "Stack Tecnológico",
     tech_stack: [
       "Python — Machine Learning",
@@ -131,6 +139,10 @@ const translations = {
     product_pulsegarden_desc: "Un ecosistema sonoro generativo bioinspirado que evoluciona en tiempo real para la regulación emocional y la modulación del estrés.",
     research: "Investigación",
     research_intro: "Enfocado en redes neuronales para generación musical, aprendizaje auto-supervisado, creatividad computacional y sistemas de sonido impulsados por IA.",
+    dissertation_title: "Disertación",
+    dissertation_desc: "Lee la disertación directamente en el navegador o descarga el PDF para leerla cuando quieras.",
+    dissertation_open: "Abrir PDF",
+    dissertation_download: "Descargar PDF",
     tech_stack_title: "Stack Tecnológico",
     tech_stack: [
       "Python — Machine Learning",
