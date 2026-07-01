@@ -247,6 +247,27 @@ function Home() {
         </div>
       </div>
 
+      {/* Dissertation Summary Section */}
+      <div className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-950/30 to-gray-900 p-8 md:p-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">{t("dissertation_title")}</p>
+              <h3 className="text-2xl font-semibold text-white mb-3">{t("dissertation_summary_title")}</h3>
+              <p className="text-gray-300 leading-relaxed">{t("dissertation_summary_text")}</p>
+            </div>
+            <a
+              href="/documents/Dissertation%20-%20Final%20-%20Lucas%20-%20English%20-%20Translated.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-3 font-semibold text-gray-950 transition hover:bg-emerald-400"
+            >
+              {t("dissertation_cta") || "Read dissertation"}
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Newsletter Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-500/20 p-12 rounded-3xl text-center">
