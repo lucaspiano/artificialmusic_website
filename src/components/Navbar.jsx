@@ -69,10 +69,9 @@ function Navbar() {
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-400/70 px-3 py-1 text-sm font-medium text-emerald-300 transition hover:bg-emerald-400/10"
+            className="px-3 py-1 text-sm font-medium text-gray-300 transition hover:text-purple-300"
           >
-            <span className="rounded-full bg-emerald-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em]">PDF</span>
-            <span>{t("dissertation_title")}</span>
+            {t("dissertation_menu_label")}
           </a>
           <Link to="/contact" className="hover:text-purple-400 transition">{t("contact")}</Link>
 
@@ -168,10 +167,9 @@ function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/70 px-3 py-2 text-sm font-medium text-emerald-300 hover:bg-emerald-400/10"
+              className="block px-3 py-2 text-sm font-medium text-gray-300 hover:text-purple-300"
             >
-              <span className="rounded-full bg-emerald-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em]">PDF</span>
-              <span>{t("dissertation_title")}</span>
+              {t("dissertation_menu_label")}
             </a>
             <Link to="/contact" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("contact")}</Link>
             <div className="pt-2 border-t border-gray-800">

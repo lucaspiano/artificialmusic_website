@@ -1,6 +1,5 @@
 import React from "react";
 import { useI18n } from "../i18n";
-import dissertationPdf from "../assets/documents/Dissertation - Final - Lucas - English - Translated.pdf";
 
 // Componente de ondas sonoras animadas (grande)
 function SoundWaves() {
@@ -206,14 +205,8 @@ function Home() {
             <a href="/about" className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition inline-flex items-center justify-center shadow-lg shadow-purple-500/20">
               {t("learn_more") || "Saiba mais"}
             </a>
-            <a
-              href={dissertationPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition inline-flex items-center justify-center border border-emerald-400/80 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-400 hover:text-gray-950 shadow-lg shadow-emerald-500/10"
-            >
-              <span className="mr-2 rounded-full bg-emerald-400/20 px-2 py-0.5 text-xs uppercase tracking-[0.2em]">PDF</span>
-              {t("dissertation_cta") || "Read dissertation"}
+            <a href="/research" className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition inline-flex items-center justify-center border border-gray-700 bg-gray-900 text-gray-200 hover:bg-gray-800 shadow-lg shadow-black/20">
+              {t("explore") || "Explore"}
             </a>
           </div>
         </div>
@@ -245,27 +238,6 @@ function Home() {
         <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-500/20 p-12 rounded-3xl">
           <h2 className="text-3xl font-bold mb-6 text-purple-300">{t("research_driven_title")}</h2>
           <p className="text-lg text-gray-300 leading-relaxed max-w-3xl">{t("research_driven_text")}</p>
-        </div>
-      </div>
-
-      {/* Dissertation Summary Section */}
-      <div className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-950/30 to-gray-900 p-8 md:p-10">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="max-w-2xl">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">{t("dissertation_title")}</p>
-              <h3 className="text-2xl font-semibold text-white mb-3">{t("dissertation_summary_title")}</h3>
-              <p className="text-gray-300 leading-relaxed">{t("dissertation_summary_text")}</p>
-            </div>
-            <a
-              href={dissertationPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-5 py-3 font-semibold text-gray-950 transition hover:bg-emerald-400"
-            >
-              {t("dissertation_cta") || "Read dissertation"}
-            </a>
-          </div>
         </div>
       </div>
 
