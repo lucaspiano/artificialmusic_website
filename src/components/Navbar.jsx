@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
     <nav className="bg-gray-900 p-4 border-b border-gray-800">
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
+      <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
         <Link to="/" className="flex items-center space-x-3">
           {/* Brand Icon */}
           <div className="relative w-10 h-10 flex items-center justify-center">
