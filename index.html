@@ -52,5 +52,21 @@
       })();
     </script>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Watchdog: if app didn't render into #root within 2s, show actionable message
+      setTimeout(function(){
+        try{
+          var root = document.getElementById('root');
+          if (root && root.children.length === 0) {
+            root.innerHTML = '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#ffffff;color:#111;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;">' +
+              '<div style="max-width:720px;text-align:center;">' +
+              '<h1 style="font-size:20px;margin-bottom:8px;color:#111;">Erro ao carregar o site</h1>' +
+              '<p style="color:#333;margin-bottom:12px;">Parece que o JavaScript necessário não foi executado. Abra o console do navegador (F12) e verifique por erros. Se estiver usando extensões de privacidade/ad-block, tente desativá-las nesta página.</p>' +
+              '<p><button onclick="location.reload()" style="background:#7c3aed;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer">Recarregar</button></p>' +
+              '</div></div>';
+          }
+        }catch(e){}
+      }, 2000);
+    </script>
   </body>
 </html>
