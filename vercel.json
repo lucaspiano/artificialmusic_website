@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/assets/index-:hash.js",
+      "destination": "/assets/index-lTwWUMhI.js",
+      "permanent": false
+    },
+    {
+      "source": "/assets/index-:hash.css",
+      "destination": "/assets/index-jBHzFPUR.css",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [
         {
