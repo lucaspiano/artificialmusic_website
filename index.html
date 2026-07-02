@@ -51,6 +51,44 @@
         } catch(e) {}
       })();
     </script>
+    <script>
+      // Dynamic asset loader: fetch fresh index.html and inject correct CSS/JS
+      (function(){
+        try{
+          var boot = function(){
+            var url = '/index.html?ts=' + Date.now();
+            fetch(url, {cache: 'no-store'}).then(function(res){
+              return res.text();
+            }).then(function(text){
+              try{
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(text, 'text/html');
+                var link = doc.querySelector('link[rel="stylesheet"][href]');
+                var mod = doc.querySelector('script[type="module"][src]');
+                if(link){
+                  var href = link.getAttribute('href');
+                  if(!document.querySelector('link[href="'+href+'"]')){
+                    var l = document.createElement('link');
+                    l.rel = 'stylesheet'; l.href = href; l.crossOrigin = '';
+                    document.head.appendChild(l);
+                  }
+                }
+                if(mod){
+                  var src = mod.getAttribute('src');
+                  if(!document.querySelector('script[src="'+src+'"]')){
+                    var s = document.createElement('script');
+                    s.type = 'module'; s.src = src; s.crossOrigin = '';
+                    document.head.appendChild(s);
+                  }
+                }
+              }catch(e){}
+            }).catch(function(e){});
+          };
+          // try boot immediately and again after 700ms to cover redirect/cache races
+          boot(); setTimeout(boot,700);
+        }catch(e){}
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
     <script>
       // Watchdog: if app didn't render into #root within 2s, show actionable message
