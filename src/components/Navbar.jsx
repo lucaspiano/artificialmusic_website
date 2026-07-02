@@ -62,9 +62,9 @@ function Navbar() {
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-6 items-center">
           <Link to="/about" className="hover:text-purple-400 transition">{t("about")}</Link>
-          <Link to="/products" className="hover:text-purple-400 transition">{t("products")}</Link>
+          <Link to="/sonifya" className="hover:text-purple-400 transition">{t("sonifya")}</Link>
+          <Link to="/projects" className="hover:text-purple-400 transition">{t("projects")}</Link>
           <Link to="/research" className="hover:text-purple-400 transition">{t("research")}</Link>
-          <Link to="/future" className="hover:text-purple-400 transition">{t("future")}</Link>
           <a
             href={pdfUrl}
             target="_blank"
@@ -159,9 +159,9 @@ function Navbar() {
         <div className="md:hidden bg-gray-900 border-t border-gray-800">
           <div className="px-4 pt-4 pb-6 space-y-3">
             <Link to="/about" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("about")}</Link>
-            <Link to="/products" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("products")}</Link>
+            <Link to="/sonifya" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("sonifya")}</Link>
+            <Link to="/projects" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("projects")}</Link>
             <Link to="/research" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("research")}</Link>
-            <Link to="/future" onClick={() => setOpen(false)} className="block hover:text-purple-400">{t("future")}</Link>
             <a
               href={pdfUrl}
               target="_blank"

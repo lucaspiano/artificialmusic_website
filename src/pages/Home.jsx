@@ -202,11 +202,11 @@ function Home() {
             {t("home_sub")}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="/about" className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition inline-flex items-center justify-center shadow-lg shadow-purple-500/20">
-              {t("learn_more") || "Saiba mais"}
+            <a href="/sonifya" className="w-full sm:w-auto px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition inline-flex items-center justify-center shadow-lg shadow-purple-500/20">
+              {t("home_cta_sonifya") || "See Sonifya"}
             </a>
-            <a href="/research" className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition inline-flex items-center justify-center border border-gray-700 bg-gray-900 text-gray-200 hover:bg-gray-800 shadow-lg shadow-black/20">
-              {t("explore") || "Explore"}
+            <a href="/projects" className="w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition inline-flex items-center justify-center border border-gray-700 bg-gray-900 text-gray-200 hover:bg-gray-800 shadow-lg shadow-black/20">
+              {t("home_cta_projects") || "Explore projects"}
             </a>
           </div>
         </div>
@@ -216,6 +216,31 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-3xl blur-3xl z-0"></div>
           <div className="relative z-10 w-40 h-40 md:w-80 md:h-80 flex items-center justify-center">
             <SoundWaves />
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Project */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_0.9fr] items-center rounded-3xl border border-purple-500/20 bg-gray-900/80 p-8 shadow-xl shadow-purple-950/20">
+          <div>
+            <p className="text-sm uppercase tracking-[0.35em] text-purple-400 mb-3">Featured project</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Sonifya</h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              An AI music creation platform that blends expressive composition, mood-aware audio design and research-driven models into a single product experience.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="/sonifya" className="rounded-full bg-purple-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-purple-400">Open Sonifya</a>
+              <a href="/research" className="rounded-full border border-gray-700 bg-gray-900 px-6 py-3 text-sm font-semibold text-gray-200 transition hover:bg-gray-800">See research</a>
+            </div>
+          </div>
+          <div className="rounded-3xl border border-gray-800 bg-gray-950 p-6">
+            <h3 className="text-xl font-semibold text-purple-300 mb-4">What Sonifya offers</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li>• Compose with AI and export MIDI/WAV</li>
+              <li>• Generate mood-aware, adaptable audio</li>
+              <li>• Support for creative and therapeutic workflows</li>
+            </ul>
           </div>
         </div>
       </div>

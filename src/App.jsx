@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import Research from "./pages/Research";
-import Future from "./pages/Future";
+import Projects from "./pages/Future";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -19,9 +19,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/sonifya" element={<Products />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/future" element={<Projects />} />
             <Route path="/research" element={<Research />} />
-            <Route path="/future" element={<Future />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
