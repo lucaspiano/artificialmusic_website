@@ -18,6 +18,22 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <style>
+        .nojs-container { box-sizing: border-box; min-height: 100vh; display:flex; align-items:center; justify-content:center; padding:32px; background:#030712; color:#e5e7eb; font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial; }
+        .nojs-box { max-width:720px; text-align:center; }
+        .nojs-box h1{ font-size:24px; margin-bottom:8px; }
+        .nojs-box p{ color:#c7c7d1; margin-bottom:16px; }
+        .nojs-box a{ color:#a78bfa; text-decoration:underline; }
+      </style>
+      <div class="nojs-container">
+        <div class="nojs-box">
+          <h1>JavaScript está desabilitado</h1>
+          <p>Este site requer JavaScript para exibir o conteúdo. Por favor habilite JavaScript no seu navegador ou <a href="mailto:contact@artificialmusic.ai">entre em contato</a>.</p>
+          <p>Se estiver usando bloqueadores de conteúdo, tente desativá-los nesta página.</p>
+        </div>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
